@@ -1,25 +1,25 @@
-import { useEffect, useRef } from "react";
-import Image from "next/image";
+import { useEffect, useRef } from "react"
+import Image from "next/image"
 
-import gsap from "gsap";
+import gsap from "gsap"
 
 export default function Hero() {
-  const headPhoneRef = useRef(null);
-  const textRef = useRef(null);
+  const headPhoneRef = useRef(null)
+  const textRef = useRef(null)
 
   useEffect(() => {
-    const tl = gsap.timeline();
+    const tl = gsap.timeline()
 
-    tl.to(headPhoneRef.current, { opacity: 1, scale: 1, duration: 1.5 }).to(
+    tl.to(headPhoneRef.current, { opacity: 1, scale: 1, duration: 1.8 }).to(
       textRef.current,
       { opacity: 1, duration: 1.5 },
-      "-=0.3"
-    );
+      "-=0.2"
+    )
 
     return () => {
-      tl.kill();
-    };
-  }, []);
+      tl.kill()
+    }
+  }, [])
 
   return (
     <section className="h-screen w-screen overflow-x-hidden bg-white">
@@ -28,7 +28,7 @@ export default function Hero() {
           ref={headPhoneRef}
           className="image-wrapper absolute top-0 z-[2] flex h-full w-full scale-[1.5] items-center justify-center opacity-0"
         >
-          <picture className="max-w-[550px]">
+          <picture className="w-full max-w-[750px]">
             <source
               srcSet="/images/hero_small_2x.png 2x"
               media="(max-width:734px)"
@@ -50,7 +50,7 @@ export default function Hero() {
               alt="Image shows AirPods Max."
               width={1147}
               height={604}
-              className="h-full w-full"
+              className="h-full w-full object-contain"
               priority
             />
           </picture>
@@ -83,7 +83,7 @@ export default function Hero() {
               alt="Image shows AirPods Max."
               width={1147}
               height={604}
-              className="h-full w-full"
+              className="h-full w-full  object-contain"
               priority
             />
           </picture>
@@ -98,5 +98,5 @@ export default function Hero() {
         </p>
       </div>
     </section>
-  );
+  )
 }
