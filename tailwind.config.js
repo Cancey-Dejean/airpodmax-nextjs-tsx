@@ -27,9 +27,10 @@ module.exports = {
         ],
       },
       colors: {
-        "apple-grey": "rgba(22, 22, 23, .8);",
+        "color-gray": "rgba(22, 22, 23, .8);",
+        "color-gray-dark": "rgba(0, 0, 0, .8);",
       },
     },
   },
   plugins: [],
-};
+}

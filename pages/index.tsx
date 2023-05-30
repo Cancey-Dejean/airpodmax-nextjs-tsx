@@ -1,11 +1,16 @@
+import PageWrapper from "@/components/PageWrapper"
+import SubNavBar from "@/components/SubNavBar"
 import Hero from "@/sections/Hero"
+import HeroText from "@/sections/HeroText"
 import VideoSection from "@/sections/VideoSection"
 
 export default function Home() {
   return (
-    <main>
+    <PageWrapper>
+      <SubNavBar />
       <Hero />
+      <HeroText />
       <VideoSection />
-    </main>
+    </PageWrapper>
   )
 }
